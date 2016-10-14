@@ -1,3 +1,5 @@
+C:\Windows\Microsoft.NET\Framework\v2.0.50727>aspnet_regsql.exe
+
 In order to receive films  
 As a Customer   
 I want to add a film to my rental list
