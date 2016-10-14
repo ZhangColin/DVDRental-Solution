@@ -1,0 +1,31 @@
+﻿@using DVDRental.Public.ApplicationService.ApplicationViews
+@model IEnumerable<FilmView>
+@{
+    ViewBag.Title = "Films";
+}
+
+
+<div class="row-fluid">
+    @foreach (FilmView film in Model) {
+        <div class="span2">
+
+            <h3>@film.Id</h3>
+            <img src="@Url.Content("~/Content/images/noimage-140x200.png")" />
+            @if (film.IsOnRentalList) {
+                using (Html.BeginForm("RemoveFilmFromList", "RentalList", new { FilmID = film.Id })) {
+                    <p><input class="btn btn-block" value="Remove from list" type="submit" /></p>
+                }
+            }
+            else if (film.IsCurrentlyOnLoan) {
+
+            }
+            else {
+                using (Html.BeginForm("AddFilmToList", "RentalList", new { FilmID = film.Id })) {
+                    <p><input class="btn btn-block" value="Rent &raquo;" type="submit" /></p>
+                }
+            }
+        </div>
+    }
+</div>
+<hr>
+
