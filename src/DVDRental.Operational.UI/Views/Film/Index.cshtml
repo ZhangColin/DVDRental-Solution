@@ -1,0 +1,18 @@
+﻿@using DVDRental.Catalogue.Catalogue
+@model System.Collections.Generic.IEnumerable<DVDRental.Catalogue.Catalogue.Film>
+
+@{
+    ViewBag.Title = "title";
+}
+
+<h2>title</h2>
+@Html.ActionLink("Add Film", "Index", "AddFilm")
+<hr />
+
+<h2>Films</h2>
+@foreach (Film film in Model) {
+    <h3>@film.Title</h3>
+
+            @Html.ActionLink("Stock Check", "ViewStockFor", "Stock", new { filmId = film.Id }, new { })
+            <hr />
+} 
