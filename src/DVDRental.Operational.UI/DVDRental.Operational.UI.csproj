@@ -115,12 +115,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\FilmAddedModel.cs" />
+    <Compile Include="Models\FilmModel.cs" />
     <Compile Include="OperationalModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
@@ -141,6 +141,8 @@
     </Content>
     <Content Include="packages.config" />
     <Content Include="Views\Film\Index.cshtml" />
+    <Content Include="Views\AddFilm\Index.cshtml" />
+    <Content Include="Views\AddFilm\FilmAdded.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -160,6 +162,10 @@
     <ProjectReference Include="..\DVDRental.Catalogue\DVDRental.Catalogue.csproj">
       <Project>{C0A84583-311D-4D74-B932-CA4877F5260D}</Project>
       <Name>DVDRental.Catalogue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Fulfillment.ApplicationService\DVDRental.Fulfillment.ApplicationService.csproj">
+      <Project>{CF48A9BF-6505-4F98-B2C1-D530EBDAFEEB}</Project>
+      <Name>DVDRental.Fulfillment.ApplicationService</Name>
     </ProjectReference>
     <ProjectReference Include="..\DVDRental.Operational.ApplicationService\DVDRental.Operational.ApplicationService.csproj">
       <Project>{A900C3D1-1A1A-4412-9211-3F6520E0EC4A}</Project>
