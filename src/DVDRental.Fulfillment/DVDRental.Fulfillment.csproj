@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A900C3D1-1A1A-4412-9211-3F6520E0EC4A}</ProjectGuid>
+    <ProjectGuid>{81A20D0D-984D-4DFF-AED3-7C3B252583EB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>DVDRental.Operational.ApplicationService</RootNamespace>
-    <AssemblyName>DVDRental.Operational.ApplicationService</AssemblyName>
+    <RootNamespace>DVDRental.Fulfillment</RootNamespace>
+    <AssemblyName>DVDRental.Fulfillment</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,18 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OperationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\DVDRenatal.Infrastructure\DVDRenatal.Infrastructure.csproj">
-      <Project>{192EC90E-5B46-46EE-8DF8-F179C257F794}</Project>
-      <Name>DVDRenatal.Infrastructure</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DVDRental.Catalogue\DVDRental.Catalogue.csproj">
-      <Project>{C0A84583-311D-4D74-B932-CA4877F5260D}</Project>
-      <Name>DVDRental.Catalogue</Name>
-    </ProjectReference>
+    <Compile Include="Stock\CurrentLoan.cs" />
+    <Compile Include="Stock\DvdAdded.cs" />
+    <Compile Include="Stock\DvdReturned.cs" />
+    <Compile Include="Stock\FilmLoanedOut.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

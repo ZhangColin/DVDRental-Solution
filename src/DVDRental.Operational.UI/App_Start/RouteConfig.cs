@@ -1,7 +1,7 @@
 ﻿using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace Agatha.DVDRental.Operational.UI
+namespace DVDRental.Operational.UI
 {
     public class RouteConfig
     {
