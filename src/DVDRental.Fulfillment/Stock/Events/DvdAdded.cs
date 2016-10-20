@@ -1,4 +1,4 @@
-﻿namespace DVDRental.Fulfillment.Stock
+﻿namespace DVDRental.Fulfillment.Stock.Events
 {
     public class DvdAdded
     {

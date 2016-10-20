@@ -4,12 +4,24 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using DVDRenatal.Infrastructure.CommandProcessor;
+using DVDRental.Public.ApplicationService;
+using DVDRental.Subscription.ApplicationService.BusinessUseCases;
 using DVDRental.Ui.Models;
 
 namespace DVDRental.Ui.Controllers
 {
     public class AccountController : Controller
     {
+        private readonly SubscriptionService _subscriptionService;
+        private readonly ICommandBus _commandBus;
+
+        public AccountController(SubscriptionService subscriptionService, ICommandBus commandBus)
+        {
+            _subscriptionService = subscriptionService;
+            _commandBus = commandBus;
+        }
+
         //
         // GET: /Account/LogOn
 
@@ -64,20 +76,19 @@ namespace DVDRental.Ui.Controllers
         [HttpPost]
         public ActionResult Register(RegisterModel model) {
             if (ModelState.IsValid) {
-                //var subscriptionExists = _subscriptionService.AlreadyHaveSubscriptionWithEmail(model.Email);
+                var subscriptionExists = _subscriptionService.AlreadyHaveSubscriptionWithEmail(model.Email);
 
-                //if (!subscriptionExists) {
-                //    _application.action_request_to(new Register() { EmailAddress = model.Email });
+                if (!subscriptionExists) {
+                    _commandBus.Submit(new Register() { EmailAddress = model.Email });
 
-                //    FormsAuthentication.SetAuthCookie(model.Email, false /* createPersistentCookie */);
-                //    return RedirectToAction("Index", "Home");
-                //}
-                //else {
-                //    ModelState.AddModelError("", "Could not create.");
-                //}
-                Membership.CreateUser(model.UserName, model.Password, model.Email);
-                FormsAuthentication.SetAuthCookie(model.Email, false /* createPersistentCookie */);
-                return RedirectToAction("Index", "Home");
+                    Membership.CreateUser(model.UserName, model.Password, model.Email);
+                    FormsAuthentication.SetAuthCookie(model.Email, false /* createPersistentCookie */);
+                    return RedirectToAction("Index", "Home");
+                }
+                else {
+                    ModelState.AddModelError("", "Could not create.");
+                }
+                
             }
 
             // If we got this far, something failed, redisplay form

@@ -7,7 +7,7 @@ namespace DVDRenatal.Infrastructure.Domain
     /// 实体基类
     /// </summary>
     /// <typeparam name="TId">实体标识（主键）的类型</typeparam>
-    public abstract class Entity<TId>: IEntity<TId> where TId : struct, IComparable {
+    public abstract class Entity<TId>: IEntity<TId> where TId : IComparable {
         private object _id;
 
         /// <summary>

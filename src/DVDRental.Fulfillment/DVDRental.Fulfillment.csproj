@@ -40,11 +40,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Fulfilment\FulfilmentRequest.cs" />
+    <Compile Include="Fulfilment\Events\FulfilmentRequestAssignedForPicking.cs" />
+    <Compile Include="Fulfilment\Events\FulfilmentRequestDispatched.cs" />
+    <Compile Include="Fulfilment\IFulfilmentRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Stock\CurrentLoan.cs" />
-    <Compile Include="Stock\DvdAdded.cs" />
+    <Compile Include="Stock\Dvd.cs" />
+    <Compile Include="Stock\Events\DvdAdded.cs" />
     <Compile Include="Stock\DvdReturned.cs" />
-    <Compile Include="Stock\FilmLoanedOut.cs" />
+    <Compile Include="Stock\Events\FilmLoanedOut.cs" />
+    <Compile Include="Stock\Events\FilmReturned.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DVDRenatal.Infrastructure\DVDRenatal.Infrastructure.csproj">
+      <Project>{192EC90E-5B46-46EE-8DF8-F179C257F794}</Project>
+      <Name>DVDRenatal.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

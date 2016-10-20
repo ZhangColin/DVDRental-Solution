@@ -1,0 +1,39 @@
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using DVDRenatal.Infrastructure.CommandProcessor;
+using DVDRenatal.Infrastructure.Domain;
+using DVDRenatal.Infrastructure.Messages;
+using DVDRental.Fulfillment.ApplicationService.BusinessUseCases;
+using DVDRental.Fulfillment.Contracts.Commands;
+using DVDRental.Fulfillment.Fulfilment;
+using DVDRental.Fulfillment.Fulfilment.Events;
+
+namespace DVDRental.Fulfillment.ApplicationService.Handlers
+{
+    public class AssignRentalAllocationsToPickerHandler: ICommandHandler<AssignRentalAllocationsToPicker>
+    {
+        private readonly IFulfilmentRepository _fulfilmentRequestRepository;
+        private readonly IMessageBus _messageBus;
+
+        public AssignRentalAllocationsToPickerHandler(IFulfilmentRepository fulfilmentRequestRepository, IMessageBus messageBus)
+        {
+            _fulfilmentRequestRepository = fulfilmentRequestRepository;
+            _messageBus = messageBus;
+        }
+
+        public void Execute(AssignRentalAllocationsToPicker command)
+        {
+            IEnumerable<FulfilmentRequest> requestsToAssign = _fulfilmentRequestRepository.FindOldsetUnassignedTop(10);
+
+            using (DomainEvents.Register((FulfilmentRequestAssignedForPicking s) => _messageBus.Send(new PublishThatTheFilmIsBeingPicked() {
+                FilmId = s.FilmId,
+                SubscriptionId = s.SubscriptionId
+            }))) {
+                foreach (var request in requestsToAssign) {
+                    request.AssignForPickingTo(command.PickerName);
+                }
+            }
+
+        }
+    }
+}

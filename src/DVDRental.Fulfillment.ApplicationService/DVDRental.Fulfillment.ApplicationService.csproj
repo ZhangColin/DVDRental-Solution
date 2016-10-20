@@ -41,7 +41,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BusinessUseCases\AddFilmToCatalogue.cs" />
+    <Compile Include="BusinessUseCases\AddStock.cs" />
+    <Compile Include="BusinessUseCases\AssignRentalAllocationsToPicker.cs" />
+    <Compile Include="BusinessUseCases\MarkRentalAllocationAsDispatched.cs" />
+    <Compile Include="BusinessUseCases\ReturnAFilm.cs" />
     <Compile Include="Handlers\AddFilmToCatalogueHandler.cs" />
+    <Compile Include="Handlers\AddStockHandler.cs" />
+    <Compile Include="Handlers\AssignRentalAllocationsToPickerHandler.cs" />
+    <Compile Include="Handlers\MarkRentalAllocationAsDispatchedHandler.cs" />
+    <Compile Include="Handlers\ReturnFilmHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -52,6 +60,14 @@
     <ProjectReference Include="..\DVDRental.Catalogue\DVDRental.Catalogue.csproj">
       <Project>{C0A84583-311D-4D74-B932-CA4877F5260D}</Project>
       <Name>DVDRental.Catalogue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Fulfillment.Contracts\DVDRental.Fulfillment.Contracts.csproj">
+      <Project>{248E0906-D690-4E90-84FB-7855F9969D41}</Project>
+      <Name>DVDRental.Fulfillment.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Fulfillment\DVDRental.Fulfillment.csproj">
+      <Project>{81A20D0D-984D-4DFF-AED3-7C3B252583EB}</Project>
+      <Name>DVDRental.Fulfillment</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

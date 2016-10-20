@@ -1,0 +1,21 @@
+﻿@using DVDRental.Fulfillment.Stock
+@model IEnumerable<Dvd>
+
+<div class="row-fluid">
+    <div class="span9">
+        @foreach (Dvd dvdOnLoan in Model) {
+            <h3>DvdId: @dvdOnLoan.Id</h3>
+            <p>On Loan to: @dvdOnLoan.CurrentLoan.SubscriptionId</p>
+            <p>Date loaned out : @dvdOnLoan.CurrentLoan.DateLoanedOut</p>
+
+            using (Html.BeginForm("Process", "Returns")) {
+                <input type="hidden" name="DvdId" value="@dvdOnLoan.Id" />
+                    <p><input class="btn" value="Process Return" type="submit" /></p>
+            }
+
+            <hr />
+        }
+    </div>
+
+
+</div>

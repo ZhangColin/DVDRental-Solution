@@ -51,7 +51,17 @@
   <ItemGroup>
     <Compile Include="DVDRentalContext.cs" />
     <Compile Include="Mappings\Catalogue\FilmMap.cs" />
+    <Compile Include="Mappings\Fulfilment\DvdMap.cs" />
+    <Compile Include="Mappings\Fulfilment\FulfilmentRequestMap.cs" />
+    <Compile Include="Mappings\Subscription\AllocationMap.cs" />
+    <Compile Include="Mappings\Subscription\RentalMap.cs" />
+    <Compile Include="Mappings\Subscription\RentalRequestMap.cs" />
+    <Compile Include="Mappings\Subscription\SubscriptionMap.cs" />
+    <Compile Include="Mappings\Subscription\SubscriptionAllocationMap.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\FulfilmentRepository.cs" />
+    <Compile Include="Repositories\RentalRequestRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -66,7 +76,16 @@
       <Project>{C0A84583-311D-4D74-B932-CA4877F5260D}</Project>
       <Name>DVDRental.Catalogue</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Fulfillment\DVDRental.Fulfillment.csproj">
+      <Project>{81A20D0D-984D-4DFF-AED3-7C3B252583EB}</Project>
+      <Name>DVDRental.Fulfillment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Subscription\DVDRental.Subscription.csproj">
+      <Project>{07B6CF30-8CCA-4A2A-A099-431CF62D3468}</Project>
+      <Name>DVDRental.Subscription</Name>
+    </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

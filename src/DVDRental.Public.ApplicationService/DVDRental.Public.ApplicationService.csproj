@@ -41,8 +41,24 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationViews\FilmView.cs" />
+    <Compile Include="ApplicationViews\RentalRequestView.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RentingService.cs" />
+    <Compile Include="SubscriptionService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DVDRenatal.Infrastructure\DVDRenatal.Infrastructure.csproj">
+      <Project>{192EC90E-5B46-46EE-8DF8-F179C257F794}</Project>
+      <Name>DVDRenatal.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Catalogue\DVDRental.Catalogue.csproj">
+      <Project>{C0A84583-311D-4D74-B932-CA4877F5260D}</Project>
+      <Name>DVDRental.Catalogue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Subscription\DVDRental.Subscription.csproj">
+      <Project>{07B6CF30-8CCA-4A2A-A099-431CF62D3468}</Project>
+      <Name>DVDRental.Subscription</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

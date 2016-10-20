@@ -40,6 +40,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationViews\PickListView.cs" />
+    <Compile Include="ApplicationViews\PickRequestView.cs" />
     <Compile Include="OperationService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -51,6 +53,10 @@
     <ProjectReference Include="..\DVDRental.Catalogue\DVDRental.Catalogue.csproj">
       <Project>{C0A84583-311D-4D74-B932-CA4877F5260D}</Project>
       <Name>DVDRental.Catalogue</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Fulfillment\DVDRental.Fulfillment.csproj">
+      <Project>{81A20D0D-984D-4DFF-AED3-7C3B252583EB}</Project>
+      <Name>DVDRental.Fulfillment</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Routing;
+using DVDRenatal.Infrastructure.Autofac;
+using DVDRenatal.Infrastructure.AutoMapper;
 
 namespace DVDRental.Ui
 {
@@ -11,6 +9,9 @@ namespace DVDRental.Ui
     {
         protected void Application_Start()
         {
+            AutofacConfig.Initialize();
+            AutoMapperConfig.Initialize();
+
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
         }

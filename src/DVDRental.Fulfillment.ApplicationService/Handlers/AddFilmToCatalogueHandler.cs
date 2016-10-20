@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using DVDRenatal.Infrastructure.CommandProcessor;
+﻿using DVDRenatal.Infrastructure.CommandProcessor;
 using DVDRenatal.Infrastructure.Repository;
 using DVDRental.Catalogue.Catalogue;
 using DVDRental.Fulfillment.ApplicationService.BusinessUseCases;
@@ -15,11 +14,11 @@ namespace DVDRental.Fulfillment.ApplicationService.Handlers
             _filmRepository = filmRepository;
         }
 
-        public Task Execute(AddFilmToCatalogue command)
+        public void Execute(AddFilmToCatalogue command)
         {
             Film film = new Film(command.ReleaseDate, command.Title);
 
-            return _filmRepository.AddAsync(film);
+            _filmRepository.Add(film);
         }
     }
 }

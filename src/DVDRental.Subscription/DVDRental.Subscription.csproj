@@ -40,8 +40,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\Allocation\Allocation.cs" />
+    <Compile Include="Allocation\Allocation.cs" />
+    <Compile Include="Allocation\AllocationService.cs" />
+    <Compile Include="Allocation\Events\FilmAllocated.cs" />
+    <Compile Include="Allocation\SubscriptionAllocation.cs" />
+    <Compile Include="RentalHistory\Rental.cs" />
+    <Compile Include="RentalRequests\Events\FilmRequested.cs" />
+    <Compile Include="RentalRequests\IRentalRequestRepository.cs" />
+    <Compile Include="RentalRequests\RentalRequest.cs" />
+    <Compile Include="RentalRequests\RentalRequestList.cs" />
+    <Compile Include="RentalRequests\Events\RentalRequestRemoved.cs" />
+    <Compile Include="RentalRequests\Events\RequestFulfilled.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Subscriptions\CurrentPeriodRentals.cs" />
+    <Compile Include="Subscriptions\Money.cs" />
+    <Compile Include="Subscriptions\Package.cs" />
+    <Compile Include="Subscriptions\Subscription.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DVDRenatal.Infrastructure\DVDRenatal.Infrastructure.csproj">
+      <Project>{192EC90E-5B46-46EE-8DF8-F179C257F794}</Project>
+      <Name>DVDRenatal.Infrastructure</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

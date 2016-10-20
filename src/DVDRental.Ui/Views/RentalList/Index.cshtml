@@ -1,0 +1,28 @@
+﻿@using DVDRental.Public.ApplicationService.ApplicationViews
+@model IEnumerable<RentalRequestView>
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row-fluid">
+    <div class="span9">
+        @foreach (RentalRequestView film in Model) {
+            <h3>@film.FilmTitle</h3>
+            <img src="@Url.Content("~/Content/images/noimage-140x200.png")" />
+            if (film.CanBeRemovedFromList) {
+                using (Html.BeginForm("RemoveFilmFromList", "RentalList", new { FilmID = film.FilmId })) {
+                    <p><input class="btn btn-block btn-dange" value="Remove from list" type="submit" /></p>
+                }
+            }
+            else {
+                <p>Dispatching Soon....</p>
+            }
+            <hr />
+        }
+    </div>
+
+    <div class="span3">
+        <h2>Need Help ?</h2>
+        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui</p>
+    </div>
+</div>

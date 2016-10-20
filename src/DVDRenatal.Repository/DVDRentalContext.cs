@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration;
 using System.Linq;
 using System.Reflection;
@@ -14,8 +15,9 @@ namespace DVDRenatal.Repository
         public DVDRentalContext(string connectionString)
             : base(connectionString)
         {
+            Configuration.AutoDetectChangesEnabled = true;
             //            Configuration.LazyLoadingEnabled = true;
-            //            Configuration.ProxyCreationEnabled = false;
+                        Configuration.ProxyCreationEnabled = false;
         }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

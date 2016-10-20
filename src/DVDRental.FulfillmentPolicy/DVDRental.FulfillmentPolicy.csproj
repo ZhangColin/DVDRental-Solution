@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{303EC263-2CD0-44D9-B052-F19439631C8C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DVDRental.FulfillmentPolicy</RootNamespace>
+    <AssemblyName>DVDRental.FulfillmentPolicy</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssignDvdToSubscriptionHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubscriptionIntegration\FilmHasBeenAllocatedHandler.cs" />
+    <Compile Include="WebEventForwarding\FulfilmentRequestAssignedForPickingForwardHandler.cs" />
+    <Compile Include="WebEventForwarding\PublishThatACopyOfAFilmHasBeenAddedToTheStockHandler.cs" />
+    <Compile Include="WebEventForwarding\PublishThatAFilmHasBeenDispatchedHandler.cs" />
+    <Compile Include="WebEventForwarding\PublishThatTheFilmIsBeingPickedHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DVDRenatal.Infrastructure\DVDRenatal.Infrastructure.csproj">
+      <Project>{192EC90E-5B46-46EE-8DF8-F179C257F794}</Project>
+      <Name>DVDRenatal.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Fulfillment.Contracts\DVDRental.Fulfillment.Contracts.csproj">
+      <Project>{248E0906-D690-4E90-84FB-7855F9969D41}</Project>
+      <Name>DVDRental.Fulfillment.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Fulfillment\DVDRental.Fulfillment.csproj">
+      <Project>{81A20D0D-984D-4DFF-AED3-7C3B252583EB}</Project>
+      <Name>DVDRental.Fulfillment</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Subscription.Contracts\DVDRental.Subscription.Contracts.csproj">
+      <Project>{FFA81ADF-9CBF-4327-B211-D872BEFC5C4D}</Project>
+      <Name>DVDRental.Subscription.Contracts</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

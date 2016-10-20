@@ -7,6 +7,7 @@ using Autofac;
 using Autofac.Integration.Mvc;
 using DVDRenatal.Infrastructure.CommandProcessor;
 using DVDRenatal.Infrastructure.IoC;
+using DVDRenatal.Infrastructure.Messages;
 using DVDRenatal.Infrastructure.Mvc;
 
 namespace DVDRenatal.Infrastructure.Autofac
@@ -25,6 +26,7 @@ namespace DVDRenatal.Infrastructure.Autofac
             builder.RegisterIDependency(assemblies);
 
             builder.RegisterType<DefaultCommandBus>().As<ICommandBus>();
+            builder.RegisterType<DefaultMessageBus>().As<IMessageBus>();
             //                        builder.RegisterType<UnitOfWork>().As<IUnitOfWork>().InstancePerHttpRequest();
 
             //            try {
