@@ -170,6 +170,10 @@
       <Project>{78598D39-D460-4F98-BEA4-3A690DAB1414}</Project>
       <Name>DVDRenatal.Repository</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DVDRental.AllocationPolicy\DVDRental.AllocationPolicy.csproj">
+      <Project>{43AD0C7D-884A-454C-AC93-E760D3662B09}</Project>
+      <Name>DVDRental.AllocationPolicy</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DVDRental.Catalogue\DVDRental.Catalogue.csproj">
       <Project>{C0A84583-311D-4D74-B932-CA4877F5260D}</Project>
       <Name>DVDRental.Catalogue</Name>
@@ -178,6 +182,14 @@
       <Project>{CF48A9BF-6505-4F98-B2C1-D530EBDAFEEB}</Project>
       <Name>DVDRental.Fulfillment.ApplicationService</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Fulfillment.Contracts\DVDRental.Fulfillment.Contracts.csproj">
+      <Project>{248E0906-D690-4E90-84FB-7855F9969D41}</Project>
+      <Name>DVDRental.Fulfillment.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.FulfillmentPolicy\DVDRental.FulfillmentPolicy.csproj">
+      <Project>{303EC263-2CD0-44D9-B052-F19439631C8C}</Project>
+      <Name>DVDRental.FulfillmentPolicy</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DVDRental.Fulfillment\DVDRental.Fulfillment.csproj">
       <Project>{81A20D0D-984D-4DFF-AED3-7C3B252583EB}</Project>
       <Name>DVDRental.Fulfillment</Name>
@@ -185,6 +197,14 @@
     <ProjectReference Include="..\DVDRental.Operational.ApplicationService\DVDRental.Operational.ApplicationService.csproj">
       <Project>{A900C3D1-1A1A-4412-9211-3F6520E0EC4A}</Project>
       <Name>DVDRental.Operational.ApplicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Subscription.ApplicationService\DVDRental.Subscription.ApplicationService.csproj">
+      <Project>{B2F6AAD6-5344-4BC4-9CEF-E701D5A79087}</Project>
+      <Name>DVDRental.Subscription.ApplicationService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DVDRental.Subscription.Contracts\DVDRental.Subscription.Contracts.csproj">
+      <Project>{FFA81ADF-9CBF-4327-B211-D872BEFC5C4D}</Project>
+      <Name>DVDRental.Subscription.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\DVDRental.Subscription\DVDRental.Subscription.csproj">
       <Project>{07B6CF30-8CCA-4A2A-A099-431CF62D3468}</Project>
