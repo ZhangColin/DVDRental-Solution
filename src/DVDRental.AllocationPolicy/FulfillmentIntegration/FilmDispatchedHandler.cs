@@ -37,7 +37,7 @@ namespace DVDRental.AllocationPolicy.FulfillmentIntegration
             }))
             {
                 rentalRequestList.Fulfilled(message.FilmId);
-                _rentalRequestRepository.Add(rentalRequestList);
+                _rentalRequestRepository.Save(rentalRequestList);
             }
         }
     }

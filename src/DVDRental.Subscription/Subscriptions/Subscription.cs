@@ -10,6 +10,10 @@ namespace DVDRental.Subscription.Subscriptions
         public int PaymentHolidays { get; set; }
         public string EmailAddress { get; set; }
 
+        private Subscription()
+        {
+        }
+
         public Subscription(Package package)
         {
             Package = package;

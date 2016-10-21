@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using DVDRenatal.Infrastructure.Extensions;
 
 namespace DVDRenatal.Infrastructure.Domain
 {
@@ -28,14 +30,8 @@ namespace DVDRenatal.Infrastructure.Domain
 
         public static void Raise<T>(T eventArgs)
         {
-            foreach (var action in Actions)
-            {
-                Action<T> typedAction = action as Action<T>;
-                if (typedAction!=null)
-                {
-                    typedAction(eventArgs);
-                }
-            }
+            IList<Delegate> actions = Actions.Where(action => action is Action<T>).ToList();
+            actions.ForEach(action =>((Action<T>)action)(eventArgs));
         }
 
         private sealed class DomainEventRegistrationRemover: IDisposable

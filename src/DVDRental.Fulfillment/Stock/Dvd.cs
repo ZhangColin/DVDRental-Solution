@@ -19,6 +19,8 @@ namespace DVDRental.Fulfillment.Stock
             FilmId = filmId;
             Barcode = barcode;
 
+            CurrentLoan = new CurrentLoan(null, null);
+
             DomainEvents.Raise(new DvdAdded() {FilmId = filmId});
         }
 
@@ -36,13 +38,13 @@ namespace DVDRental.Fulfillment.Stock
 
         public void ReturnLoan()
         {
-            if (CurrentLoan!=null)
+            if (CurrentLoan.SubscriptionId!=null)
             {
                 // Needs to be removed from the rental list
                 DomainEvents.Raise(new FilmReturned()
                 {
                     FilmId = FilmId,
-                    Subscription = CurrentLoan.SubscriptionId
+                    Subscription = CurrentLoan.SubscriptionId.Value
                 });
 
                 CurrentLoan = null;

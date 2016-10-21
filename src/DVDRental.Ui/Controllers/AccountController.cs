@@ -36,7 +36,7 @@ namespace DVDRental.Ui.Controllers
         public ActionResult LogOn(LogOnModel model, string returnUrl) {
             if (ModelState.IsValid) {
                 if (Membership.ValidateUser(model.UserName, model.Password)) {
-                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                    FormsAuthentication.SetAuthCookie(Membership.GetUser(model.UserName).Email, model.RememberMe);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\")) {
                         return Redirect(returnUrl);
@@ -79,10 +79,10 @@ namespace DVDRental.Ui.Controllers
                 var subscriptionExists = _subscriptionService.AlreadyHaveSubscriptionWithEmail(model.Email);
 
                 if (!subscriptionExists) {
-                    _commandBus.Submit(new Register() { EmailAddress = model.Email });
-
                     Membership.CreateUser(model.UserName, model.Password, model.Email);
                     FormsAuthentication.SetAuthCookie(model.Email, false /* createPersistentCookie */);
+
+                    _commandBus.Submit(new Register() { EmailAddress = model.Email });
                     return RedirectToAction("Index", "Home");
                 }
                 else {

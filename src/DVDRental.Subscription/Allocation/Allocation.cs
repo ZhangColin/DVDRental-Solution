@@ -43,6 +43,10 @@ namespace DVDRental.Subscription.Allocation
 
         public bool HasAllocatedFor(int subscriptionId)
         {
+            if (SubscriptionAllocations==null)
+            {
+                SubscriptionAllocations = new List<SubscriptionAllocation>();
+            }
             return SubscriptionAllocations.Count(x => x.SubscriptionId == subscriptionId) > 0;
         }
     }

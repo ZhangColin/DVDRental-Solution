@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using DVDRenatal.Infrastructure.CommandProcessor;
 using DVDRenatal.Infrastructure.Domain;
@@ -23,7 +24,7 @@ namespace DVDRental.Fulfillment.ApplicationService.Handlers
 
         public void Execute(AssignRentalAllocationsToPicker command)
         {
-            IEnumerable<FulfilmentRequest> requestsToAssign = _fulfilmentRequestRepository.FindOldsetUnassignedTop(10);
+            IEnumerable<FulfilmentRequest> requestsToAssign = _fulfilmentRequestRepository.FindOldsetUnassignedTop(10).ToList();
 
             using (DomainEvents.Register((FulfilmentRequestAssignedForPicking s) => _messageBus.Send(new PublishThatTheFilmIsBeingPicked() {
                 FilmId = s.FilmId,
@@ -31,6 +32,8 @@ namespace DVDRental.Fulfillment.ApplicationService.Handlers
             }))) {
                 foreach (var request in requestsToAssign) {
                     request.AssignForPickingTo(command.PickerName);
+
+                    _fulfilmentRequestRepository.Save(request);
                 }
             }
 

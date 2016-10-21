@@ -44,6 +44,7 @@ namespace DVDRental.AllocationPolicy
                 })))
                 {
                     new AllocationService().Allocate(subscription, currentPeriodRentals, currentAllocations, allocation);
+                    _allocationRepository.Save(allocation);
                 }
             }
         }

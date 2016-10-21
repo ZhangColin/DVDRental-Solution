@@ -30,7 +30,7 @@ namespace DVDRental.Subscription.ApplicationService.Handlers
             {
                 rentalRequestList.RemoveFromTheList(command.FilmId);
 
-                _rentalRequestRepository.Add(rentalRequestList);
+                _rentalRequestRepository.Save(rentalRequestList);
             }
         }
     }

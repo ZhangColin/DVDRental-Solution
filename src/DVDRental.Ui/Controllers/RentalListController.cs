@@ -29,7 +29,7 @@ namespace DVDRental.Ui.Controllers
         [HttpPost]
         public ActionResult AddFilmToList(int filmId)
         {
-            var subscription = _subscriptionRepository.Get(x => x.EmailAddress != User.Identity.Name);
+            var subscription = _subscriptionRepository.Get(x => x.EmailAddress == User.Identity.Name);
             _commandBus.Submit(new CustomerWantsToRentAFilm() {FilmId = filmId, SubscriptionId = subscription.Id});
 
             return RedirectToAction("Index", "Films");

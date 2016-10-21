@@ -44,8 +44,9 @@ namespace DVDRental.Operational.ApplicationService
                 pickRequestView.FilmTitle = _filmRepository.Get(filmId).Title;
                 pickRequestView.DvdIdsToFulfil = new List<int>();
                 pickRequestView.FulfilmentRequestId = request.Id;
+                pickRequestView.Requested = request.Requested;
 
-                foreach (var dvd in _dvdRepository.Query(d=>d.CurrentLoan==null && d.FilmId==filmId))
+                foreach (var dvd in _dvdRepository.Query(d=>d.CurrentLoan.SubscriptionId==null && d.FilmId==filmId))
                 {
                     pickRequestView.DvdIdsToFulfil.Add(dvd.Id);
                 }
@@ -58,7 +59,7 @@ namespace DVDRental.Operational.ApplicationService
 
         public IEnumerable<Dvd> ViewAllPotentialReturns()
         {
-            return _dvdRepository.Query(x => x.CurrentLoan != null).AsEnumerable();
+            return _dvdRepository.Query(x => x.CurrentLoan.SubscriptionId!=null).AsEnumerable();
         }
 
         public IEnumerable<Dvd> ViewStockFor(int filmId)

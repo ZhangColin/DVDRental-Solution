@@ -7,8 +7,8 @@
     <ProjectGuid>{B1F312C0-9ECA-4155-AFA9-A69462B17896}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Agatha.DVDRental.Subscription.Process</RootNamespace>
-    <AssemblyName>Agatha.DVDRental.Subscription.Process</AssemblyName>
+    <RootNamespace>DVDRental.Subscription.Process</RootNamespace>
+    <AssemblyName>DVDRental.Subscription.Process</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>

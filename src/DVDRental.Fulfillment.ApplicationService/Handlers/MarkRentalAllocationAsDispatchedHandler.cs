@@ -35,6 +35,8 @@ namespace DVDRental.Fulfillment.ApplicationService.Handlers
             }))
             {
                 request.FulfilledWith(dvd.Id);
+
+                _fulfilmentRepository.Save(request);
             }
         }
     }

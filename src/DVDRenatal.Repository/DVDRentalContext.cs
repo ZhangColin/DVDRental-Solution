@@ -12,6 +12,8 @@ namespace DVDRenatal.Repository
 {
     public class DVDRentalContext : EntitiesContext<DVDRentalContext>
     {
+
+        public DVDRentalContext() { }
         public DVDRentalContext(string connectionString)
             : base(connectionString)
         {

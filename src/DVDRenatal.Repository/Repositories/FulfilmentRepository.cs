@@ -25,7 +25,7 @@ namespace DVDRenatal.Repository.Repositories
 
         public IEnumerable<FulfilmentRequest> FindOldsetUnassignedTop(int number)
         {
-            return All().Take(null).AsEnumerable();
+            return All().Take(number).AsEnumerable();
         }
     }
 }

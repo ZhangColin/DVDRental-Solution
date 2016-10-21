@@ -39,7 +39,7 @@ namespace DVDRental.Subscription.ApplicationService.Handlers
                 RentalRequestList rentalRequestList = GetRentalListFor(command.SubscriptionId);
                 rentalRequestList.CreateRequestFor(film.Id);
 
-                _rentalRequestRepository.Add(rentalRequestList);
+                _rentalRequestRepository.Save(rentalRequestList);
             }
         }
 

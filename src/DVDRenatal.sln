@@ -47,7 +47,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVDRental.Subscription.Appl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVDRental.Subscription.Contracts", "DVDRental.Subscription.Contracts\DVDRental.Subscription.Contracts.csproj", "{FFA81ADF-9CBF-4327-B211-D872BEFC5C4D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Agatha.DVDRental.Subscription.Process", "Agatha.DVDRental.Subscription.Process\Agatha.DVDRental.Subscription.Process.csproj", "{B1F312C0-9ECA-4155-AFA9-A69462B17896}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DVDRental.Subscription.Process", "DVDRental.Subscription.Process\DVDRental.Subscription.Process.csproj", "{B1F312C0-9ECA-4155-AFA9-A69462B17896}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

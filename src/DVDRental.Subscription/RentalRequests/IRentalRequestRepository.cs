@@ -3,6 +3,6 @@
     public interface IRentalRequestRepository
     {
         RentalRequestList FindBy(int subscriptionId);
-        void Add(RentalRequestList request);
+        void Save(RentalRequestList request);
     }
 }

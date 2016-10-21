@@ -18,7 +18,7 @@ namespace DVDRental.AllocationPolicy.FulfillmentIntegration
             RentalRequestList requestList = _rentalRequestRepository.FindBy(message.SubscriptionId);
             requestList.MarkAsReadyForDispatch(message.FilmId);
 
-            _rentalRequestRepository.Add(requestList);
+            _rentalRequestRepository.Save(requestList);
         }
     }
 }

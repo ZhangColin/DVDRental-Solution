@@ -11,7 +11,7 @@ namespace DVDRenatal.Repository.Mappings.Subscription
             Property(c => c.SubscriptionId).HasColumnName("SubscriptionId");
             Property(c => c.DvdId).HasColumnName("DvdId");
             Property(c => c.DateSentOut).HasColumnName("DateSentOut");
-            Property(c => c.DateReturned).HasColumnName("DateReturned");
+            Property(c => c.DateReturned).HasColumnName("DateReturned").IsOptional();
         }
     }
 }

@@ -19,9 +19,19 @@ namespace DVDRenatal.Repository.Repositories
             return list;
         }
 
-        public void Add(RentalRequestList request)
+        public void Save(RentalRequestList request)
         {
-            this.Add(request.RentalRequests);
+            foreach (var rentalRequest in request.RentalRequests)
+            {
+                if (Get(rentalRequest.Id)!=null)
+                {
+                this.Save(rentalRequest);
+                }
+                else
+                {
+                    this.Add(rentalRequest);
+                }
+            }
         }
     }
 }

@@ -9,7 +9,7 @@
     @foreach (FilmView film in Model) {
         <div class="span2">
 
-            <h3>@film.Id</h3>
+            <h3>@film.Name</h3>
             <img src="@Url.Content("~/Content/images/noimage-140x200.png")" />
             @if (film.IsOnRentalList) {
                 using (Html.BeginForm("RemoveFilmFromList", "RentalList", new { FilmID = film.Id })) {

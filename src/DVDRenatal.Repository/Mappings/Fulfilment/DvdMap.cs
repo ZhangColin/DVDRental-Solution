@@ -9,8 +9,8 @@ namespace DVDRenatal.Repository.Mappings.Fulfilment
 
             Property(c => c.FilmId).HasColumnName("FilmId");
             Property(c => c.Barcode).HasColumnName("Barcode");
-            Property(c => c.CurrentLoan.SubscriptionId).HasColumnName("SubscriptionId");
-            Property(c => c.CurrentLoan.DateLoanedOut).HasColumnName("DateLoanedOut");
+            Property(c => c.CurrentLoan.SubscriptionId).HasColumnName("SubscriptionId").IsOptional();
+            Property(c => c.CurrentLoan.DateLoanedOut).HasColumnName("DateLoanedOut").IsOptional();
         }
     }
 }
