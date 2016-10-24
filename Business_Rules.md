@@ -72,6 +72,7 @@ Level 1:
 
 **Age Restrictions**  
 If you have lists for younger members they will be restricted to rentals for their age level.
+
 ---
 
 ## 我如何取消订阅？##

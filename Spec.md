@@ -5,6 +5,7 @@
 In order to receive films  
 As a Customer   
 I want to add a film to my rental list
+
 ---
 
 为了租借电影给客户
@@ -14,6 +15,7 @@ I want to add a film to my rental list
 In order to send out a film to a customer   
 As a warehouse guy   
 I want to have a list of DVDs to be posted  
+
 ---
 
 为了知道我有一部电影可以租了
@@ -23,6 +25,7 @@ I want to have a list of DVDs to be posted
 In order to know that I have a film on the way   
 As a customer   
 I want to be notified by email  
+
 ---
 
 为了租到更多的电影
