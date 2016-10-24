@@ -6,6 +6,7 @@ using DVDRenatal.Infrastructure.Repository;
 using DVDRental.Fulfillment.ApplicationService.BusinessUseCases;
 using DVDRental.Fulfillment.Contracts.Events;
 using DVDRental.Fulfillment.Stock;
+using DVDRental.Fulfillment.Stock.Events;
 
 namespace DVDRental.Fulfillment.ApplicationService.Handlers
 {

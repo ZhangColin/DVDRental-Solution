@@ -3,6 +3,9 @@ using DVDRental.Subscription.Subscriptions;
 
 namespace DVDRental.Subscription.Allocation
 {
+    /// <summary>
+    /// 分配服务
+    /// </summary>
     public class AllocationService
     {
         public void Allocate(Subscriptions.Subscription subscription, CurrentPeriodRentals currentPeriodRentals,

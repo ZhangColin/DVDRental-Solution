@@ -31,7 +31,7 @@ namespace DVDRental.Subscription.ApplicationService.Handlers
 
             using (DomainEvents.Register((FilmRequested s)=>_messageBus.Send(new AllocateRentalRequest()
             {
-                RentalRequestId = s.Id,
+                RentalRequestId = s.RequestId,
                 FilmId = s.FilmId,
                 SubscriptionId = s.SubscriptionId
             })))

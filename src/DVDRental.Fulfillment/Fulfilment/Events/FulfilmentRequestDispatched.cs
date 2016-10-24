@@ -1,5 +1,8 @@
 ﻿namespace DVDRental.Fulfillment.Fulfilment.Events
 {
+    /// <summary>
+    /// 满足请求，Dvd已派送
+    /// </summary>
     public class FulfilmentRequestDispatched
     {
         public int FilmId { get; set; }

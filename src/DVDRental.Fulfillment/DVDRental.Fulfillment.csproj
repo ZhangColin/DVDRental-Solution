@@ -48,9 +48,8 @@
     <Compile Include="Stock\CurrentLoan.cs" />
     <Compile Include="Stock\Dvd.cs" />
     <Compile Include="Stock\Events\DvdAdded.cs" />
-    <Compile Include="Stock\DvdReturned.cs" />
-    <Compile Include="Stock\Events\FilmLoanedOut.cs" />
-    <Compile Include="Stock\Events\FilmReturned.cs" />
+    <Compile Include="Stock\Events\DvdLoanedOut.cs" />
+    <Compile Include="Stock\Events\DvdReturned.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DVDRenatal.Infrastructure\DVDRenatal.Infrastructure.csproj">

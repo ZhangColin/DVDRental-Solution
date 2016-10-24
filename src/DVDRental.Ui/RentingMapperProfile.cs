@@ -18,7 +18,7 @@ namespace DVDRental.Ui
                 .ForMember(dest=>dest.IsOnRentalList, opt=>opt.UseValue(false));
 
             CreateMap<RentalRequest, RentalRequestView>()
-                .ForMember(dest => dest.CanBeRemovedFromList, opt => opt.MapFrom(src => src.IsBeingPick))
+                .ForMember(dest => dest.CanBeRemovedFromList, opt => opt.MapFrom(src => src.CanBeRemovedFromList))
                 .ForMember(dest => dest.SubscriptionIdString, opt => opt.MapFrom(src => src.SubscriptionId.ToString()))
                 .ForMember(dest => dest.FilmTitle, opt => opt.MapFrom(src => filmRepository.Get(src.FilmId).Title));
         }
