@@ -8,6 +8,9 @@ using DVDRental.Subscription.RentalHistory;
 using DVDRental.Subscription.RentalRequests;
 
 namespace DVDRental.Public.ApplicationService {
+    /// <summary>
+    /// 租借服务
+    /// </summary>
     public class RentingService {
         private readonly IRepository<Subscription.Subscriptions.Subscription> _subscriptionRepository;
         private readonly IRepository<Rental> _rentalRepository;
@@ -25,18 +28,33 @@ namespace DVDRental.Public.ApplicationService {
             _rentalRequestRepository = rentalRequestRepository;
         }
 
+        /// <summary>
+        /// 为了租借电影，用户想查看所有有效的电影列表
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
         public IEnumerable<FilmView> CustomerWantsToViewFilmsAvailableForRent(string member)
         {
             var films = _filmRepository.All().Take(10).AsEnumerable();
             return films.MapTo<IEnumerable<FilmView>>();
         }
 
+        /// <summary>
+        /// 获取租借历史
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
         public IEnumerable<Rental> GetRentalHistoryFor(string member)
         {
             var subscription = _subscriptionRepository.Query(x => x.EmailAddress == member).FirstOrDefault();
             return _rentalRepository.Query(x => x.SubscriptionId == subscription.Id).Take(100).AsEnumerable();
         }
 
+        /// <summary>
+        /// 显示租借列表
+        /// </summary>
+        /// <param name="member"></param>
+        /// <returns></returns>
         public IEnumerable<RentalRequestView> ViewRentalListFor(string member)
         {
             var subscription = _subscriptionRepository.Get(x=>x.EmailAddress==member);

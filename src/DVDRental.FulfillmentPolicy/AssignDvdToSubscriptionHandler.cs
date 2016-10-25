@@ -1,6 +1,6 @@
 ﻿using DVDRenatal.Infrastructure.Messages;
 using DVDRenatal.Infrastructure.Repository;
-using DVDRental.Fulfillment.Contracts;
+using DVDRental.Fulfillment.Contracts.Commands;
 using DVDRental.Fulfillment.Stock;
 
 namespace DVDRental.FulfillmentPolicy

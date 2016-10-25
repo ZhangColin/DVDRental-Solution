@@ -3,10 +3,10 @@
 
 <div class="alert alert-success">
     <p>
-        <b>Stock Added</b>
-        The barcode for this Dvd is <i>@Model.Barcode</i>.
+        <b>添加库存</b>
+        Dvd的条形码是： <i>@Model.Barcode</i>.
     </p>
 </div>
 
-<p>  @Html.ActionLink("Add more stock?", "ViewStockFor", "Stock", new { filmId = Model.FilmId }, new { })   </p>
+<p>  @Html.ActionLink("继续添加?", "ViewStockFor", "Stock", new { filmId = Model.FilmId }, new { })   </p>
 

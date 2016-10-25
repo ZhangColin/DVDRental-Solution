@@ -7,6 +7,9 @@ using DVDRental.Operational.UI.Models;
 
 namespace DVDRental.Operational.UI.Controllers
 {
+    /// <summary>
+    /// 选中
+    /// </summary>
     public class PickController: Controller
     {
         private readonly OperationService _operationService;

@@ -1,7 +1,7 @@
 ﻿@using DVDRental.Public.ApplicationService.ApplicationViews
 @model IEnumerable<RentalRequestView>
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "租借列表";
 }
 
 <div class="row-fluid">
@@ -11,11 +11,11 @@
             <img src="@Url.Content("~/Content/images/noimage-140x200.png")" />
             if (film.CanBeRemovedFromList) {
                 using (Html.BeginForm("RemoveFilmFromList", "RentalList", new { FilmID = film.FilmId })) {
-                    <p><input class="btn btn-block btn-dange" value="Remove from list" type="submit" /></p>
+                    <p><input class="btn btn-block btn-dange" value="取消" type="submit" /></p>
                 }
             }
             else {
-                <p>Dispatching Soon....</p>
+                <p>正在派送....</p>
             }
             <hr />
         }

@@ -10,6 +10,9 @@ using DVDRental.Fulfillment.Stock.Events;
 
 namespace DVDRental.Fulfillment.ApplicationService.Handlers
 {
+    /// <summary>
+    /// 归还一部电影
+    /// </summary>
     public class ReturnFilmHandler: ICommandHandler<ReturnAFilm>
     {
         private readonly IRepository<Dvd> _dvdRepository;
@@ -23,7 +26,11 @@ namespace DVDRental.Fulfillment.ApplicationService.Handlers
 
         public void Execute(ReturnAFilm command)
         {
-            using (DomainEvents.Register((DvdReturned s)=>_messageBus.Send(new FilmReturned())))
+            using (DomainEvents.Register((DvdReturned s)=>_messageBus.Send(new FilmReturned()
+            {
+                FilmId = s.FilmId,
+                Subscription = s.Subscription
+            })))
             {
                 var dvd = _dvdRepository.Get(command.DvdId);
 

@@ -1,14 +1,14 @@
 ﻿@model DVDRental.Operational.UI.Models.FilmModel
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "添加影片";
 }
 
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true, "Film creation was unsuccessful. Please correct the errors and try again.")
     <div>
         <fieldset>
-            <legend>Film Information</legend>
+            <legend>影片信息</legend>
 
             <div class="editor-label">
                 @Html.LabelFor(m => m.Title)
@@ -19,7 +19,7 @@
             </div>
 
             <p>
-                <input type="submit" value="Add Film" />
+                <input type="submit" value="添加" />
             </p>
         </fieldset>
     </div>

@@ -2,9 +2,12 @@
 
 namespace DVDRental.Fulfillment.Contracts.Commands
 {
-    public class PublishThatAFilmHasBeenDispatched : IMessage
+    /// <summary>
+    /// 分配Dvd给会员
+    /// </summary>
+    public class AssignDvdToSubscription : IMessage
     {
-        public int FilmId { get; set; }
         public int SubscriptionId { get; set; }
+        public int DvdId { get; set; }
     }
 }

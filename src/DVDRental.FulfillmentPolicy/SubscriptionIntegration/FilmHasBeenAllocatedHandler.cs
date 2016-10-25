@@ -4,6 +4,9 @@ using DVDRental.Subscription.Contracts.Events;
 
 namespace DVDRental.FulfillmentPolicy.SubscriptionIntegration
 {
+    /// <summary>
+    /// 电影已经分配
+    /// </summary>
     public class FilmHasBeenAllocatedHandler: IMessageHandler<FilmHasBeenAllocated>
     {
         private readonly IFulfilmentRepository _fulfilmentRepository;

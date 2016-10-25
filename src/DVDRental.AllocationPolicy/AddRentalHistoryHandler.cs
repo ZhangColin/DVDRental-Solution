@@ -5,6 +5,9 @@ using DVDRental.Subscription.RentalHistory;
 
 namespace DVDRental.AllocationPolicy
 {
+    /// <summary>
+    /// 添加租借历史
+    /// </summary>
     public class AddRentalHistoryHandler: IMessageHandler<AddRentalHistory>
     {
         private readonly IRepository<Rental> _rentalRepository;

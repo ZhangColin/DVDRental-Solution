@@ -8,6 +8,9 @@ using DVDRental.Subscription.RentalRequests.Events;
 
 namespace DVDRental.Subscription.ApplicationService.Handlers
 {
+    /// <summary>
+    /// 客户无意租借这部电影
+    /// </summary>
     public class CustomerIsNotInterestedInRentingThisFilmHandler: ICommandHandler<CustomerIsNotInterestedInRentingThisFilm>
     {
         private readonly IRentalRequestRepository _rentalRequestRepository;

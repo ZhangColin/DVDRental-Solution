@@ -1,7 +1,7 @@
 ﻿@using DVDRental.Public.ApplicationService.ApplicationViews
 @model IEnumerable<FilmView>
 @{
-    ViewBag.Title = "Films";
+    ViewBag.Title = "影片";
 }
 
 
@@ -13,7 +13,7 @@
             <img src="@Url.Content("~/Content/images/noimage-140x200.png")" />
             @if (film.IsOnRentalList) {
                 using (Html.BeginForm("RemoveFilmFromList", "RentalList", new { FilmID = film.Id })) {
-                    <p><input class="btn btn-block" value="Remove from list" type="submit" /></p>
+                    <p><input class="btn btn-block" value="从列表移除" type="submit" /></p>
                 }
             }
             else if (film.IsCurrentlyOnLoan) {
@@ -21,7 +21,7 @@
             }
             else {
                 using (Html.BeginForm("AddFilmToList", "RentalList", new { FilmID = film.Id })) {
-                    <p><input class="btn btn-block" value="Rent &raquo;" type="submit" /></p>
+                    <p><input class="btn btn-block" value="租借" type="submit" /></p>
                 }
             }
         </div>

@@ -9,6 +9,9 @@ using DVDRental.Operational.UI.Models;
 
 namespace DVDRental.Operational.UI.Controllers
 {
+    /// <summary>
+    /// 库存管理
+    /// </summary>
     public class StockController: Controller
     {
         private readonly OperationService _operationService;

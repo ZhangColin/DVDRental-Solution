@@ -2,6 +2,9 @@
 using DVDRental.Operational.ApplicationService;
 
 namespace DVDRental.Operational.UI.Controllers {
+    /// <summary>
+    /// 电影列表
+    /// </summary>
     public class FilmController: Controller {
         private readonly OperationService _operationService;
 

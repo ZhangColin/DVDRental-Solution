@@ -9,6 +9,9 @@ using DVDRental.Operational.ApplicationService.ApplicationViews;
 
 namespace DVDRental.Operational.ApplicationService
 {
+    /// <summary>
+    /// 后台操作服务
+    /// </summary>
     public class OperationService
     {
         private readonly IRepository<Film> _filmRepository;
@@ -22,12 +25,21 @@ namespace DVDRental.Operational.ApplicationService
             _dvdRepository = dvdRepository;
         }
 
+        /// <summary>
+        /// 显示电影列表
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Film> ViewAllFilms()
         {
             // Take 10
             return _filmRepository.Query(film => true).AsEnumerable();
         }
 
+        /// <summary>
+        /// 操作员想查看分配的租借申请
+        /// </summary>
+        /// <param name="processorName"></param>
+        /// <returns></returns>
         public PickListView OperatorWantsToViewAssignedRentalAllocations(string processorName)
         {
             var fulfilmentRequests = _fulfilmentRepository.Query(request=>request.AssignedTo == processorName && !request.IsDispatched).ToList();
@@ -57,11 +69,20 @@ namespace DVDRental.Operational.ApplicationService
             return pickListView;
         }
 
+        /// <summary>
+        /// 查看所有需要归还的Dvd
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Dvd> ViewAllPotentialReturns()
         {
             return _dvdRepository.Query(x => x.CurrentLoan.SubscriptionId!=null).AsEnumerable();
         }
 
+        /// <summary>
+        /// 查看电影库存
+        /// </summary>
+        /// <param name="filmId"></param>
+        /// <returns></returns>
         public IEnumerable<Dvd> ViewStockFor(int filmId)
         {
             return _dvdRepository.Query(x => x.FilmId == filmId).AsEnumerable();

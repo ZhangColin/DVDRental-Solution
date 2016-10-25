@@ -44,9 +44,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SubscriptionIntegration\FilmHasBeenAllocatedHandler.cs" />
     <Compile Include="WebEventForwarding\FulfilmentRequestAssignedForPickingForwardHandler.cs" />
-    <Compile Include="WebEventForwarding\PublishThatACopyOfAFilmHasBeenAddedToTheStockHandler.cs" />
-    <Compile Include="WebEventForwarding\PublishThatAFilmHasBeenDispatchedHandler.cs" />
-    <Compile Include="WebEventForwarding\PublishThatTheFilmIsBeingPickedHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DVDRenatal.Infrastructure\DVDRenatal.Infrastructure.csproj">

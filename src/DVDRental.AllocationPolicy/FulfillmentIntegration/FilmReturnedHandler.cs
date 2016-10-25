@@ -3,6 +3,9 @@ using DVDRental.Fulfillment.Contracts.Events;
 
 namespace DVDRental.AllocationPolicy.FulfillmentIntegration
 {
+    /// <summary>
+    /// 电影已归还
+    /// </summary>
     public class FilmReturnedHandler: IMessageHandler<FilmReturned>
     {
         public void Execute(FilmReturned message)

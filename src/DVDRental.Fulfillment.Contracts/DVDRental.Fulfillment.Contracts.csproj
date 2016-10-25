@@ -40,10 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AssignDvdToSubscription.cs" />
-    <Compile Include="Commands\PublishThatACopyOfAFilmHasBeenAddedToTheStock.cs" />
-    <Compile Include="Commands\PublishThatAFilmHasBeenDispatched.cs" />
-    <Compile Include="Commands\PublishThatTheFilmIsBeingPicked.cs" />
+    <Compile Include="Commands\AssignDvdToSubscription.cs" />
     <Compile Include="Events\ACopyOfAFilmHasBeenAddedToTheStock.cs" />
     <Compile Include="Events\FilmBeingPicked.cs" />
     <Compile Include="Events\FilmDispatched.cs" />

@@ -5,12 +5,12 @@
     <div class="span9">
         @foreach (Dvd dvdOnLoan in Model) {
             <h3>DvdId: @dvdOnLoan.Id</h3>
-            <p>On Loan to: @dvdOnLoan.CurrentLoan.SubscriptionId.Value</p>
-            <p>Date loaned out : @dvdOnLoan.CurrentLoan.DateLoanedOut.Value</p>
+            <p>租借给: @dvdOnLoan.CurrentLoan.SubscriptionId.Value</p>
+            <p>借出时间 : @dvdOnLoan.CurrentLoan.DateLoanedOut.Value</p>
 
             using (Html.BeginForm("Process", "Returns")) {
                 <input type="hidden" name="DvdId" value="@dvdOnLoan.Id" />
-                    <p><input class="btn" value="Process Return" type="submit" /></p>
+                    <p><input class="btn" value="归还" type="submit" /></p>
             }
 
             <hr />

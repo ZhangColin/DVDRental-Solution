@@ -62,7 +62,7 @@ namespace DVDRental.Fulfillment.Stock
             {
                 // 需要从出租列表中删除
                 // Needs to be removed from the rental list
-                DomainEvents.Raise(new Events.DvdReturned()
+                DomainEvents.Raise(new DvdReturned()
                 {
                     FilmId = FilmId,
                     Subscription = CurrentLoan.SubscriptionId.Value

@@ -6,8 +6,8 @@
         @foreach (Rental filmRented in Model) {
             <h3>DvdId: @filmRented.DvdId</h3>
             <img src="@Url.Content("~/Content/images/noimage-140x200.png")" />
-            <p>DateSentOut: @filmRented.DateSentOut</p>
-            <p>DateReturned: @filmRented.DateReturned</p>
+            <p>供出时间: @filmRented.DateSentOut</p>
+            <p>归还时间: @filmRented.DateReturned</p>
             <hr />
         }
     </div>

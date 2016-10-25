@@ -5,6 +5,9 @@ using DVDRental.Fulfillment.ApplicationService.BusinessUseCases;
 using DVDRental.Operational.UI.Models;
 
 namespace DVDRental.Operational.UI.Controllers {
+    /// <summary>
+    /// 添加电影
+    /// </summary>
     public class AddFilmController: Controller {
         private readonly ICommandBus _commandBus;
 

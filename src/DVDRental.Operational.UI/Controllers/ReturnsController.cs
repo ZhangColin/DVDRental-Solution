@@ -5,6 +5,9 @@ using DVDRental.Operational.ApplicationService;
 
 namespace DVDRental.Operational.UI.Controllers
 {
+    /// <summary>
+    /// 归还
+    /// </summary>
     public class ReturnsController: Controller
     {
         private readonly OperationService _operationService;

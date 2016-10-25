@@ -5,6 +5,9 @@ using DVDRental.Fulfillment.ApplicationService.BusinessUseCases;
 
 namespace DVDRental.Fulfillment.ApplicationService.Handlers
 {
+    /// <summary>
+    /// 添加一部电影
+    /// </summary>
     public class AddFilmToCatalogueHandler: ICommandHandler<AddFilmToCatalogue>
     {
         private readonly IRepository<Film> _filmRepository;

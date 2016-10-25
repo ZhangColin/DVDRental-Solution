@@ -9,13 +9,11 @@ using DVDRental.AllocationPolicy;
 using DVDRental.AllocationPolicy.FulfillmentIntegration;
 using DVDRental.Fulfillment.ApplicationService.BusinessUseCases;
 using DVDRental.Fulfillment.ApplicationService.Handlers;
-using DVDRental.Fulfillment.Contracts;
 using DVDRental.Fulfillment.Contracts.Commands;
 using DVDRental.Fulfillment.Contracts.Events;
 using DVDRental.Fulfillment.Fulfilment;
 using DVDRental.FulfillmentPolicy;
 using DVDRental.FulfillmentPolicy.SubscriptionIntegration;
-using DVDRental.FulfillmentPolicy.WebEventForwarding;
 using DVDRental.Operational.ApplicationService;
 using DVDRental.Subscription.ApplicationService.Handlers;
 using DVDRental.Subscription.Contracts.Events;
@@ -55,9 +53,6 @@ namespace DVDRental.Operational.UI
             builder.RegisterType<StockAddedHandler>().As<IMessageHandler<ACopyOfAFilmHasBeenAddedToTheStock>>().SingleInstance();
             builder.RegisterType<AddRentalHistoryHandler>().As<IMessageHandler<AddRentalHistory>>().SingleInstance();
             builder.RegisterType<AllocateRentalRequestHandler>().As<IMessageHandler<AllocateRentalRequest>>().SingleInstance();
-            builder.RegisterType<PublishThatACopyOfAFilmHasBeenAddedToTheStockHandler>().As<IMessageHandler<PublishThatACopyOfAFilmHasBeenAddedToTheStock>>().SingleInstance();
-            builder.RegisterType<PublishThatAFilmHasBeenDispatchedHandler>().As<IMessageHandler<PublishThatAFilmHasBeenDispatched>>().SingleInstance();
-            builder.RegisterType<PublishThatTheFilmIsBeingPickedHandler>().As<IMessageHandler<PublishThatTheFilmIsBeingPicked>>().SingleInstance();
             builder.RegisterType<FilmHasBeenAllocatedHandler>().As<IMessageHandler<FilmHasBeenAllocated>>().SingleInstance();
             builder.RegisterType<AssignDvdToSubscriptionHandler>().As<IMessageHandler<AssignDvdToSubscription>>().SingleInstance();
         }

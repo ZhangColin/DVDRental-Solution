@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using DVDRenatal.Infrastructure.CommandProcessor;
+﻿using DVDRenatal.Infrastructure.CommandProcessor;
 using DVDRenatal.Infrastructure.Domain;
 using DVDRenatal.Infrastructure.Messages;
 using DVDRenatal.Infrastructure.Repository;
@@ -11,6 +10,9 @@ using DVDRental.Subscription.RentalRequests.Events;
 
 namespace DVDRental.Subscription.ApplicationService.Handlers
 {
+    /// <summary>
+    /// 客户想租借一部电影
+    /// </summary>
     public class CustomerWantsToRentAFilmHandler: ICommandHandler<CustomerWantsToRentAFilm>
     {
         private readonly IRentalRequestRepository _rentalRequestRepository;

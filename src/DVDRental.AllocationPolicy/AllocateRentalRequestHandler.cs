@@ -10,6 +10,9 @@ using DVDRental.Subscription.Subscriptions;
 
 namespace DVDRental.AllocationPolicy
 {
+    /// <summary>
+    /// 分配租借申请
+    /// </summary>
     public class AllocateRentalRequestHandler: IMessageHandler<AllocateRentalRequest>
     {
         private readonly IRepository<Subscription.Subscriptions.Subscription> _subscriptionRepository;

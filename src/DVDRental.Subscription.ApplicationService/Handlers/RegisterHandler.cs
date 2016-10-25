@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Threading.Tasks;
 using DVDRenatal.Infrastructure.CommandProcessor;
 using DVDRenatal.Infrastructure.Repository;
 using DVDRental.Subscription.ApplicationService.BusinessUseCases;
@@ -7,6 +6,9 @@ using DVDRental.Subscription.Subscriptions;
 
 namespace DVDRental.Subscription.ApplicationService.Handlers
 {
+    /// <summary>
+    /// 会员注册
+    /// </summary>
     public class RegisterHandler: ICommandHandler<Register>
     {
         private readonly IRepository<Subscriptions.Subscription> _subscriptionRepository;

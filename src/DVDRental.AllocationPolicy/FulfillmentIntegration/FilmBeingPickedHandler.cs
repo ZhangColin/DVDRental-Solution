@@ -5,6 +5,9 @@ using DVDRental.Subscription.RentalRequests;
 
 namespace DVDRental.AllocationPolicy.FulfillmentIntegration
 {
+    /// <summary>
+    /// 租借电影的请求被选中
+    /// </summary>
     public class FilmBeingPickedHandler: IMessageHandler<FilmBeingPicked> {
         private readonly IRentalRequestRepository _rentalRequestRepository;
 

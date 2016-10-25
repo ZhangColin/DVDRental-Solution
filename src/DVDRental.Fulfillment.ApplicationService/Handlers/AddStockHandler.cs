@@ -4,11 +4,15 @@ using DVDRenatal.Infrastructure.Messages;
 using DVDRenatal.Infrastructure.Repository;
 using DVDRental.Fulfillment.ApplicationService.BusinessUseCases;
 using DVDRental.Fulfillment.Contracts.Commands;
+using DVDRental.Fulfillment.Contracts.Events;
 using DVDRental.Fulfillment.Stock;
 using DVDRental.Fulfillment.Stock.Events;
 
 namespace DVDRental.Fulfillment.ApplicationService.Handlers
 {
+    /// <summary>
+    /// 添加库存（添加一部Dvd）
+    /// </summary>
     public class AddStockHandler: ICommandHandler<AddStock>
     {
         private readonly IRepository<Dvd> _dvdRepository;
@@ -22,7 +26,7 @@ namespace DVDRental.Fulfillment.ApplicationService.Handlers
 
         public void Execute(AddStock command)
         {
-            using (DomainEvents.Register((DvdAdded s)=>_messageBus.Send(new PublishThatACopyOfAFilmHasBeenAddedToTheStock() {FilmId = s.FilmId})))
+            using (DomainEvents.Register((DvdAdded s)=>_messageBus.Send(new ACopyOfAFilmHasBeenAddedToTheStock() {FilmId = s.FilmId})))
             {
                 var dvd = new Dvd(command.FilmId, command.Barcode);
                 _dvdRepository.Add(dvd);

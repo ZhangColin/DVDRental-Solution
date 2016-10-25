@@ -4,14 +4,14 @@
 
 <p>Pick List For: @Model.AssignedTo</p>
 @using (Html.BeginForm("Assign", "Pick")) {
-    <p><input class="btn" value="Assign units &raquo;" type="submit" /></p>
+    <p><input class="btn" value="分派" type="submit" /></p>
 }
 <hr />
 @foreach (PickRequestView request in Model.PickRequests) {
     <div class="row-fluid">
         <div class="span6">
             <h3>@request.FilmTitle</h3>
-            <p>Requested On: @request.Requested</p>
+            <p>申请时间: @request.Requested</p>
             <p>Dispatch to:</p>
             <p>221B Baker St,</p>
             <p>London</p>
@@ -20,12 +20,12 @@
         </div>
 
         <div class="span6">
-            <h3>Fulfill</h3>
+            <h3>落实</h3>
             @foreach (int dvdId in request.DvdIdsToFulfil) {
                 using (Html.BeginForm("Dispatch", "Pick")) {
                     <input type="hidden" name="FulfilmentRequestId" value="@request.FulfilmentRequestId" />
                     <input type="hidden" name="DvdId" value="@dvdId" />
-                    <p><input class="btn" value="SIMULATE FULFILLING WITH DVD ID: @dvdId" type="submit" /></p>
+                    <p><input class="btn" value="DVD ID: @dvdId" type="submit" /></p>
                 }
             }
         </div>

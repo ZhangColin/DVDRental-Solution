@@ -8,8 +8,8 @@
 <table class="table table-striped table-bordered table-condensed">
     <tr>
         <td>Id</td>
-        <td>Barcode</td>
-        <td>Status</td>
+        <td>条形码</td>
+        <td>状态</td>
     </tr>
 
     @foreach (Dvd dvd in Model.Stock) {
@@ -18,7 +18,7 @@
             <td>@dvd.Barcode</td>
             <td>
                 @if (dvd.CurrentLoan != null) {
-                    <i>on loan to @dvd.CurrentLoan.SubscriptionId</i>
+                    <i>借给 @dvd.CurrentLoan.SubscriptionId</i>
                 }
             </td>
         </tr>
@@ -27,5 +27,5 @@
 </table>
 
 @using (Html.BeginForm("AddStockFor", "Stock", new { FilmID = Model.FilmId })) {
-    <p><input class="btn" value="Add stock &raquo;" type="submit" /></p>
+    <p><input class="btn" value="添加库存" type="submit" /></p>
 }   

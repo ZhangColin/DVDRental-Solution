@@ -2,6 +2,9 @@
 
 namespace DVDRental.Public.ApplicationService.ApplicationViews
 {
+    /// <summary>
+    /// 租借请求视图
+    /// </summary>
     public class RentalRequestView
     {
         //public int Id { get; set; }

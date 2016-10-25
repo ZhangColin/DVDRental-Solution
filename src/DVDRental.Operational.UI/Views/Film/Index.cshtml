@@ -2,17 +2,17 @@
 @model IEnumerable<Film>
 
 @{
-    ViewBag.Title = "title";
+    ViewBag.Title = "影片列表";
 }
 
-<h2>Title</h2>
-@Html.ActionLink("Add Film", "Index", "AddFilm")
+<h2>影片列表</h2>
+@Html.ActionLink("添加影片", "Index", "AddFilm")
 <hr />
 
 <h2>Films</h2>
 @foreach (Film film in Model) {
     <h3>@film.Title</h3>
 
-            @Html.ActionLink("Stock Check", "ViewStockFor", "Stock", new { filmId = film.Id }, new { })
+            @Html.ActionLink("库存", "ViewStockFor", "Stock", new { filmId = film.Id }, new { })
             <hr />
 } 

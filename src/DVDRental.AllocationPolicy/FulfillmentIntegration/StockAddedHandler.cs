@@ -5,6 +5,9 @@ using DVDRental.Subscription.Allocation;
 
 namespace DVDRental.AllocationPolicy.FulfillmentIntegration
 {
+    /// <summary>
+    /// 一部电影添加到库存
+    /// </summary>
     public class StockAddedHandler: IMessageHandler<ACopyOfAFilmHasBeenAddedToTheStock>
     {
         private readonly IRepository<Allocation> _allocationRepository;

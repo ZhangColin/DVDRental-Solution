@@ -9,6 +9,9 @@ using DVDRental.Subscription.RentalRequests.Events;
 
 namespace DVDRental.AllocationPolicy.FulfillmentIntegration
 {
+    /// <summary>
+    /// 电影已派送
+    /// </summary>
     public class FilmDispatchedHandler: IMessageHandler<FilmDispatched>
     {
         private readonly IRentalRequestRepository _rentalRequestRepository;
@@ -31,6 +34,7 @@ namespace DVDRental.AllocationPolicy.FulfillmentIntegration
                 // Should add film name
                 //_bus.Publish(new AddRentalHistory() { FilmId = s.FilmId, SubscriptionId = s.SubscriptionId });
 
+                // 租借请求已被满足，添加到租借历史中
                 // TODO: Send command
                 var rental = new Rental(s.FilmId, s.SubscriptionId, DateTime.Now);
                 _rentalRepository.Add(rental);
